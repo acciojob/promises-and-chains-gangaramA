@@ -2,14 +2,12 @@ let age = document.querySelector("#age");
 let name = document.querySelector("#name");
 let btn = document.querySelector("#btn");
 
-// Add event listener to the button (or form submission)
 btn.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); 
 
     const userAge = parseInt(age.value.trim());
     const userName = name.value.trim();
 
-    // Validation: Ensure fields are not empty
     if (!userName || isNaN(userAge)) {
         alert("Please enter valid details.");
         return;
