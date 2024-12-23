@@ -2,20 +2,19 @@ let age = document.querySelector("#age");
 let name = document.querySelector("#name");
 let btn = document.querySelector("#btn");
 
-// Add event listener to the button (form submission)
+// Add event listener to the button (or form submission)
 btn.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault(); // Prevent default form submission
 
-    const userAge = parseInt(age.value.trim());  // Ensure we get an integer from age
-    const userName = name.value.trim();          // Get the name input
+    const userAge = parseInt(age.value.trim());
+    const userName = name.value.trim();
 
-    // Validation: Ensure fields are not empty and age is a valid number
+    // Validation: Ensure fields are not empty
     if (!userName || isNaN(userAge)) {
-        alert("Please enter valid details.");  // Update alert message to match the test
+        alert("Please enter valid details.");
         return;
     }
 
-    // Create a promise that resolves or rejects based on the age value
     const agePromise = new Promise((resolve, reject) => {
         setTimeout(() => {
             if (userAge > 18) {
@@ -23,11 +22,10 @@ btn.addEventListener("click", (event) => {
             } else {
                 reject(`Oh sorry ${userName}. You aren't old enough.`);
             }
-        }, 4000); // Wait for 4 seconds before resolving or rejecting the promise
+        }, 4000); // 4-second delay
     });
 
-    // Handle the promise result
     agePromise
-        .then((message) => alert(message))   // Show message when promise resolves
-        .catch((error) => alert(error));     // Show message when promise rejects
+        .then((message) => alert(message))
+        .catch((error) => alert(error));
 });
