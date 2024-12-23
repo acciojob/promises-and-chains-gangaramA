@@ -11,7 +11,7 @@ btn.addEventListener("click", (event) => {
 
     // Validation: Ensure fields are not empty and age is a valid number
     if (!userName || isNaN(userAge)) {
-        alert("Please enter valid details.");
+        alert("Please enter valid details.");  // Update alert message to match the test
         return;
     }
 
