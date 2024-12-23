@@ -9,7 +9,8 @@ btn.addEventListener("click", (event) => {
     const userName = name.value.trim();
 
     if (!userName || isNaN(userAge)) {
-        alert("Please enter valid details.");
+		alert("Please enter valid details");
+
         return;
     }
 
